@@ -92,6 +92,46 @@
     .video-caption { padding: 12px 5px 2px; font-weight: 700; }
     .video-caption small { display: block; color: var(--muted); font-weight: 500; }
     .video-side p { color: var(--muted); }
+
+    /* Customer Reviews Section */
+    .reviews-section { background: #fffdf5; padding-top: 10px; }
+    .rating-summary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: white; border: 1px solid var(--line); border-radius: 999px;
+      padding: 8px 16px; margin-top: 12px; font-weight: 700; font-size: .95rem;
+      box-shadow: 0 6px 18px rgba(63, 49, 0, .05);
+    }
+    .rating-summary .stars { color: #f5b400; letter-spacing: 1px; }
+    .review-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .review-card {
+      background: white; border: 1px solid var(--line); border-radius: 22px;
+      padding: 22px; box-shadow: 0 8px 24px rgba(113, 92, 11, .06);
+      display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+      transition: transform .2s;
+    }
+    .review-card:hover { transform: translateY(-4px); }
+    .review-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .review-stars { color: #f5b400; font-size: 1rem; letter-spacing: 1px; }
+    .review-tag {
+      font-size: .78rem; font-weight: 700; color: #8b6900;
+      background: #fff6cc; border: 1px solid #f4e296; border-radius: 99px;
+      padding: 3px 10px; white-space: nowrap;
+    }
+    .review-quote { margin: 0; color: #36455f; font-size: .98rem; line-height: 1.65; }
+    .reviewer-meta {
+      display: flex; align-items: center; gap: 12px;
+      padding-top: 12px; border-top: 1px dashed #efe5be;
+    }
+    .reviewer-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: #fff2b2; color: var(--ink); font-weight: 800;
+      display: grid; place-items: center; flex-shrink: 0; font-size: 1rem;
+    }
+    .reviewer-meta strong { display: block; font-size: 1rem; color: var(--ink); }
+    .reviewer-meta small { display: block; color: var(--muted); font-size: .84rem; }
+
     .payment-strip { background: #fffdf5; padding-top: 0; }
     .payment-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .payment { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 18px 12px; text-align: center; }
@@ -129,6 +169,7 @@
     @media (max-width: 850px) {
       .nav-links { display: none; }
       .hero-grid, .offer-box, .video-layout, .order-grid { grid-template-columns: 1fr; }
+      .review-grid { grid-template-columns: 1fr; }
       .hero { padding-top: 38px; }
       .hero-photo { height: 340px; }
       .note-one { left: 5px; }
@@ -244,7 +285,7 @@
       <div class="container video-layout">
         <div class="video-card">
           <div class="video-frame" id="videoFrame">
-            <img src="https://images.unsplash.com/photo-1455390582262-044c పf2?auto=format&fit=crop&w=1000&q=80" alt="পণ্যের ভিডিও রিভিউ প্রিভিউ" onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85'">
+            <img src="https://images.unsplash.com/photo-1455390582262-044c2d73e2c0?auto=format&fit=crop&w=1000&q=80" alt="পণ্যের ভিডিও রিভিউ প্রিভিউ" onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85'">
             <button class="play-btn" id="playVideo" aria-label="রিভিউ ভিডিও চালান">▶</button>
           </div>
           <div class="video-caption">🎬 আমাদের পণ্যের রিভিউ ভিডিও <small>আসল পণ্যের ভিডিও এখানে যুক্ত করুন</small></div>
@@ -259,6 +300,125 @@
             <li>🎥 স্কুল কিট আনবক্সিং ভিডিও</li>
           </ul>
           <a class="btn btn-dark" href="#contact">📩 ভিডিও বা রিভিউ জানতে যোগাযোগ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ক্রেতাদের রিভিউ সেকশন -->
+    <section class="reviews-section" id="customer-reviews">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">💬 ক্রেতাদের মতামত</div>
+          <h2>অভিভাবক ও শিক্ষার্থীদের রিভিউ</h2>
+          <p>খাতা ঘর থেকে পণ্য নিয়ে সন্তুষ্ট ক্রেতাদের কিছু অভিজ্ঞতা নিচে তুলে ধরা হলো।</p>
+          <div class="rating-summary">
+            <span class="stars">★★★★★</span>
+            <span>৪.৯ / ৫ গড় রেটিং · ১৫০+ সন্তুষ্ট ক্রেতা</span>
+          </div>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card">
+            <div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="৫ তারকা রেটিং">★★★★★</div>
+                <span class="review-tag">স্কুল কিট</span>
+              </div>
+              <p class="review-quote">“মেয়ের ক্লাস টু-এর জন্য স্কুল কিট অর্ডার করেছিলাম। খাতার কাগজের মান বেশ ভালো, কালি ছড়ায় না। প্যাকেজিংটাও খুব পরিপাটি ছিল।”[cite: 1]</p>
+            </div>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">ন</div>
+              <div>
+                <strong>নুসরাত জাহান</strong>
+                <small>মিরপুর, ঢাকা · যাচাইকৃত ক্রেতা</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="৫ তারকা রেটিং">★★★★★</div>
+                <span class="review-tag">খাতা ও নোটবুক</span>
+              </div>
+              <p class="review-quote">“বাজারের অনেক খাতার চেয়ে এখানকার খাতাগুলো মজবুত। দামও সাধ্যের মধ্যে। ক্যাশ অন ডেলিভারিতে সময়মতো হাতে পেয়েছি।”[cite: 1]</p>
+            </div>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">ত</div>
+              <div>
+                <strong>তানভীর আহমেদ</strong>
+                <small>নারায়ণগঞ্জ · যাচাইকৃত ক্রেতা</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="৫ তারকা রেটিং">★★★★★</div>
+                <span class="review-tag">জ্যামিতি বক্স ও পেন্সিল</span>
+              </div>
+              <p class="review-quote">“ছেলে জ্যামিতি বক্স আর রঙ পেন্সিল পেয়ে ভীষণ খুশি। আঁকার কাজে পেন্সিলগুলো বেশ স্মুথ, সহজে ভেঙে যায় না। আবারও নেব ইনশাআল্লাহ।”[cite: 1]</p>
+            </div>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">স</div>
+              <div>
+                <strong>সাবিনা ইয়াসমিন</strong>
+                <small>উত্তরা, ঢাকা · যাচাইকৃত ক্রেতা</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="৪.৫ তারকা রেটিং">★★★★☆</div>
+                <span class="review-tag">পেন্সিল ও কলম</span>
+              </div>
+              <p class="review-quote">“বাচ্চাদের হাতের লেখার জন্য গ্রিপ ভালো এমন পেন্সিল খুঁজছিলাম। খাতা ঘরের কালেকশন বেশ উপকারী লেগেছে, যোগাযোগ ব্যবস্থাও আন্তরিক।”[cite: 1]</p>
+            </div>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">র</div>
+              <div>
+                <strong>রফিকুল ইসলাম</strong>
+                <small>গাজীপুর · যাচাইকৃত ক্রেতা</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="৫ তারকা রেটিং">★★★★★</div>
+                <span class="review-tag">বিশেষ অফার</span>
+              </div>
+              <p class="review-quote">“একসাথে খাতা ও প্রয়োজনীয় স্টেশনারি পেয়ে দোকানে দৌড়াদৌড়ির ঝামেলা কমে গেছে। নতুন সেশনের প্রস্তুতির জন্য দারুণ সুবিধা।”[cite: 1]</p>
+            </div>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">ম</div>
+              <div>
+                <strong>মাহমুদা আক্তার</strong>
+                <small>চট্টগ্রাম · যাচাইকৃত ক্রেতা</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div>
+              <div class="review-top">
+                <div class="review-stars" aria-label="৫ তারকা রেটিং">★★★★★</div>
+                <span class="review-tag">খাতা ও নোটবুক</span>
+              </div>
+              <p class="review-quote">“কভারের রঙ ও ডিজাইন বাচ্চাদের খুব পছন্দ হয়েছে। অর্ডারের আগে যা যা বলেছিল, ঠিক সেভাবেই পণ্য পেয়েছি।”[cite: 1]</p>
+            </div>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">ফ</div>
+              <div>
+                <strong>ফারহানা চৌধুরী</strong>
+                <small>সিলেট · যাচাইকৃত ক্রেতা</small>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -367,7 +527,7 @@
         "ঠিকানা: " + form.get("address"),
         "পেমেন্ট: " + form.get("payment"),
         "অতিরিক্ত তথ্য: " + (form.get("notes") || "নেই")
-      ].join("\\n");
+      ].join("\n");
       const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
       window.open(url, "_blank", "noopener");
     });
